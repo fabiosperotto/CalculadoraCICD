@@ -36,7 +36,7 @@ jobs:
 
     - name: Create Release
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
       run: |
         VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
         gh release create "v$VERSION" \
